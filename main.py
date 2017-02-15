@@ -1,5 +1,6 @@
 from display import *
 from draw import *
+import math
 
 screen = new_screen()
 red = [ 255, 0, 0 ]
@@ -9,13 +10,22 @@ white = [ 255, 255, 255 ]
 
 colors = [red, green, blue, white]
 
-draw_line(screen, 0, 300, 200, 500, white)
-draw_line(screen, 0, 400, 200, 400, white)
+increment = (2 * math.pi) / 360
 
-draw_line(screen, 5, 480, 153, 482, white)
+for i in range(360):
+    radius = 150 + i % 20
 
-for y in range(0, 200, 4):
-    draw_line(screen, 0, 00, 250, y, colors[y / 4 % 4]) 
+    angle = i * increment
+
+    if i % 3 == 0:
+        color = white
+    else:
+        color = red
+    
+    x = int(radius * math.cos(angle)) + 250
+    y = int(radius * math.sin(angle)) + 250
+    draw_line(screen, 250, 250, x, y, color)
+    
 
 display(screen)
 
