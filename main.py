@@ -4,11 +4,7 @@ import math
 
 screen = new_screen()
 red = [ 255, 0, 0 ]
-green = [ 0, 255, 0 ]
-blue = [ 0, 0, 255 ]
 white = [ 255, 255, 255 ]
-
-colors = [red, green, blue, white]
 
 increment = (2 * math.pi) / 360
 

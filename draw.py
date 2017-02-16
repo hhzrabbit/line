@@ -10,7 +10,6 @@ def getOctant(slope):
     else:
         return 2
 
-#works
 def oct1(screen, x, y, x1, y1, color, A, B, d):
 
     while x <= x1:
@@ -32,7 +31,7 @@ def oct2(screen, x, y, x1, y1, color, A, B, d):
         y += 1
         d += 2 * B
 
-#works
+
 def oct8(screen, x, y, x1, y1, color, A, B, d):
     while x <= x1:
         plot(screen, color, x, y)
