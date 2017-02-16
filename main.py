@@ -20,9 +20,8 @@ for i in range(360):
     
     x = int(radius * math.cos(angle)) + 250
     y = int(radius * math.sin(angle)) + 250
-    draw_line(screen, 250, 250, x, y, color)
+    draw_line(250, 250, x, y, screen, color)
     
-
 display(screen)
 
 save_extension(screen, 'img.png')

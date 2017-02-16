@@ -10,7 +10,7 @@ def getOctant(slope):
     else:
         return 2
 
-def oct1(screen, x, y, x1, y1, color, A, B, d):
+def oct1(x, y, x1, y1, screen, color, A, B, d):
 
     while x <= x1:
         plot(screen, color, x, y)
@@ -22,7 +22,7 @@ def oct1(screen, x, y, x1, y1, color, A, B, d):
         d += 2 * A
 
     
-def oct2(screen, x, y, x1, y1, color, A, B, d):
+def oct2(x, y, x1, y1, screen, color, A, B, d):
     while y <= y1:
         plot(screen, color, x, y)
         if d < 0:
@@ -32,7 +32,7 @@ def oct2(screen, x, y, x1, y1, color, A, B, d):
         d += 2 * B
 
 
-def oct8(screen, x, y, x1, y1, color, A, B, d):
+def oct8(x, y, x1, y1, screen, color, A, B, d):
     while x <= x1:
         plot(screen, color, x, y)
         if d < 0:
@@ -41,7 +41,7 @@ def oct8(screen, x, y, x1, y1, color, A, B, d):
         x += 1
         d += 2 * A
 
-def oct7(screen, x, y, x1, y1, color, A, B, d):
+def oct7(x, y, x1, y1, screen, color, A, B, d):
     while y >= y1:
         plot(screen, color, x, y)
         if d > 0:
@@ -51,10 +51,10 @@ def oct7(screen, x, y, x1, y1, color, A, B, d):
         d -= 2 * B
 
      
-def draw_line(screen, x0, y0, x1, y1, color):
+def draw_line(x0, y0, x1, y1, screen, color):
 
     if x0 > x1:
-        draw_line(screen, x1, y1, x0, y0, color)
+        draw_line(x1, y1, x0, y0, screen, color)
         
     else:
         
@@ -91,4 +91,4 @@ def draw_line(screen, x0, y0, x1, y1, color):
                    8 : oct8
         }
 
-        mapping[octant](screen, x0, y0, x1, y1, color, A, B, d)
+        mapping[octant](x0, y0, x1, y1, screen, color, A, B, d)
